@@ -6,7 +6,7 @@ def bnp(stock_price, cash):
     left_cash = cash
     for price in stock_price:
         # 보유 현금으로 주식을 살 수 있다면
-        if left_cash // price > 0:
+        if left_cash >= price:
             # 보유 주식은 몫을 담고
             having_stock += left_cash // price
             # 현금에는 나머지를 담는다
