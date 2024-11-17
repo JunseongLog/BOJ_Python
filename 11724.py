@@ -1,6 +1,5 @@
 # 백준 11724번 연결 요소의 개수 DFS
 
-
 import sys
 # 재귀 횟수 늘려주기
 sys.setrecursionlimit(10**6)
