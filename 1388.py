@@ -18,9 +18,6 @@ def DFS(y, x, type):
         if 0 <= (y+1) < N and floor_map[y+1][x] == type:
             DFS(y+1, x, type)
 
-
-
-
 # 0. 입력 및 초기화
 N, M = map(int, input().split()) #N세로 M가로
 floor_map = []
