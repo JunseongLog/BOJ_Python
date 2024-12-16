@@ -20,6 +20,7 @@ def BFS(x, times):
             print(times)
             return
         
+        # 이동 방식을 두는 순서도 중요함
         for nx in [x*2, x-1, x+1]:
             if 0 <= nx <= MAX and not visited[nx]:
                 if nx == (x*2):
@@ -35,5 +36,5 @@ N, K = map(int, input().split())
 MAX = 100000
 visited = [0] * (MAX+1)
 
-# 1. BFS호출 및 출력력
+# 1. BFS호출 및 출력
 BFS(N, 0)
