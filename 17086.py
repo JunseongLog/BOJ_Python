@@ -50,4 +50,3 @@ while queue:
 # 3. 출력
 max_value = max(map(max, visited)) # 이차원 리스트에서 가장 큰 값 구하기
 print(max_value)
-            
