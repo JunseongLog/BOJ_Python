@@ -40,7 +40,7 @@ while not pq.empty():
             pq.put([temp_distance, adj_node])
 
 # Print result
-for i in  range(1, V+1):
+for i in range(1, V+1):
     if distance[i] == INF:
         print("INF")
         continue
