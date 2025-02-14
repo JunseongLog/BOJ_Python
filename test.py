@@ -1,34 +1,39 @@
-# 백준 숨바꼭질 3 연습
+# 조합 5C3 구하기
+# 재귀함수 사용
 
-import sys
-input = sys.stdin.readline
+lst = [1, 2, 3, 4, 5] # 원소
+choose = [] # 뽑아서 여기에 넣어준다
 
-from queue import PriorityQueue
+def combination(index, level):
+    if level == 3:
+        print(choose)
+        return
+    
+    for i in range(index, 5): # 원소의 마지막 인덱스 값이 4니까
+        choose.append(lst[i])
+        combination(index + 1, level + 1)
+        choose.pop()
 
-INF = int(1e12)
-MAX = int(1e5)
+combination(0, 0)
 
-N, K = map(int, input().split())
-time = [INF] * (MAX+1)
 
-pq = PriorityQueue()
-pq.put([0, N]) # cur_time, start_node or position
-time[N] = 0 # 시작점은 거리 0
 
-while not pq.empty():
+"""
+# 반복문 사용
 
-    cur_time, cur_position = pq.get()
+N = 5 #원소의 총 개수
 
-    nexts = [
-        [cur_time, cur_position * 2],
-        [cur_time + 1, cur_position + 1],
-        [cur_time + 1, cur_position - 1]
-    ]
+lst = [1, 2, 3, 4, 5]
+choose = []
 
-    for next_time, next_position in nexts:
-        if 0 <= next_position <= MAX:
-            if next_time < time[next_position]:
-                time[next_position] = next_time
-                pq.put([next_time, next_position])
-
-print(time[K])
+for i in range(0, N):
+    choose.append(lst[i])
+    for j in range(i+1, N):
+        choose.append(lst[j])
+        for k in range(j+1, N):
+            choose.append(lst[k])
+            print(choose)
+            choose.pop()
+        choose.pop()
+    choose.pop()
+"""
